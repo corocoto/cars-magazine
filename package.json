@@ -39,6 +39,7 @@
   },
   "dependencies": {
     "core-js": "^3.8.1",
+    "gh-pages": "^3.1.0",
     "gsap": "^3.5.1",
     "pubsub-js": "^1.9.1"
   }

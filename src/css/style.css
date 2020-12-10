@@ -1,106 +1,126 @@
 @import "colors.css";
 @import "fonts.css";
+
+:root{
+  --header-padding: 24px;
+}
+
 *{
   font-family: var(--standard);
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
+
 html, body{
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
+
 body{
-  line-height: 1.4;
   color: var(--white);
 }
-.header{
-  position: fixed;
+
+header{
+  width: 100%;
   top: 0;
   left: 0;
-  padding: 20px;
-  color: #000;
+  padding: var(--header-padding);
+  color: var(--black);
   font-weight: bold;
-
+  font-family: var(--header);
+  z-index: 1;
 }
 
-.header h1{
-    font-family: var(--header);
-}
-
-.header, .pagination {
+header, .pagination {
   position: fixed;
-  z-index: 100;
-}
-.pagination{
-  bottom: 50px;
-  left: 50px;
 }
 
-.pagination li{
-    width: 10px;
-    height: 10px;
-    margin-bottom: 10px;
-    list-style-type: none;
-}
-
-.pagination a{
-    display: block;
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background: var(--white);
-}
-
-.pagination a.is_active{
-    background: var(--red);
-}
-
-.section{
+section{
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  width: 100%;
+  height: 100%;
   background: var(--green);
   opacity: 0;
+  padding: 0 calc(48px * 2 + 16px);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.section:nth-child(odd){
-    background: var(--blue);
+section:nth-child(odd){
+  background: var(--blue);
 }
 
-.section.is_active{
-    opacity: 1;
+section.is_active{
+  opacity: 1;
 }
 
-.section h2{
-    font-family: var(--header);
-    font-size: 70px;
-    margin:1.3em 0 1em 20px;
-    position: relative;
+.text-container h2{
+  font-family: var(--header);
+  font-size: 72px;
+  line-height: 1.6;
+  position: relative;
 }
 
-.section .list{
-    display: flex;
-    justify-content: space-around;
-    margin-bottom: 5em;
+.text-container h2 span {
+  margin-right: 12px;
 }
 
-.section p{
-    display: block;
-    width: 40%;
-    font-size: 20px;
+.text-container{
+  display: block;
+  width: 40%;
+  height: fit-content;
+}
+
+.text-container p{
+    font-size: 24px;
     line-height: 1.6;
 }
 
-.section .image{
-    margin: 0 auto;
-    width: 40vw;
+.text-container p:not(:last-of-type){
+  margin-bottom: 24px;
 }
 
-.section .slide{
+.image-container{
+    width: 40%;
+    max-width: 100%;
+}
+
+.image-container img{
     width: 100%;
-    box-shadow: 0px 13px 34px 2px rgba(0,0,0,0.75);
+    box-shadow: 0 12px 36px 2px rgba(0,0,0,0.75);
+}
+
+
+nav{
+  bottom: 48px;
+  left: 48px;
+}
+
+nav li{
+  width: 16px;
+  height: 16px;
+  
+  list-style-type: none;
+}
+
+nav li:not(:last-child){
+  margin-bottom: 12px;
+}
+
+nav a{
+  cursor: pointer;
+  display: block;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background: var(--white);
+}
+
+nav a.is_active{
+  background: var(--red);
 }

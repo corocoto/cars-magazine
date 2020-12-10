@@ -4,19 +4,18 @@ export default class Paginator {
         this.scrollEvents = this.scrollEvents.bind(this);
         this.clickLinkEventHandler = this.clickLinkEventHandler.bind(this);
 
-
         this.activeSlide = 0;
-        this.max = document.querySelectorAll('.section').length - 1;
+        this.max = document.querySelectorAll('section').length - 1;
         this.canGo = 1;
 
         window.addEventListener('wheel', this.scrollEvents);
         this.clickEvents();
     }
 
-    scrollEvents(e){
+    scrollEvents({deltaY}){
         if (this.canGo){
             this.canGo = false;
-            const direction= e.deltaY > 0 ? 1 : -1;
+            const direction= deltaY > 0 ? 1 : -1;
             const newSlide = this.activeSlide + direction;
 
             setTimeout(()=> this.canGo = true, 1300);
@@ -26,7 +25,7 @@ export default class Paginator {
         }     
     }
     clickEvents(){
-        const links = document.querySelectorAll('.pagination a');
+        const links = document.querySelectorAll('nav a');
         for (let link of links){
             link.addEventListener('click', this.clickLinkEventHandler)
         }
@@ -35,7 +34,7 @@ export default class Paginator {
     clickLinkEventHandler(e){
         e.preventDefault();
         if (this.canGo){
-            const newSlide= +this.getAttribute('data-gotoslide');
+            const newSlide = +e.target.getAttribute('data-gotoslide');
             if (newSlide !== this.activeSlide){
                 PubSub.publish('goToSlide', {from: this.activeSlide, to: newSlide});
                 this.activeSlide = newSlide;
