@@ -13,7 +13,7 @@ export default class Paginator {
         this.clickEvents();
     }
 
-    scrollEvents(){
+    scrollEvents(e){
         if (this.canGo){
             this.canGo = false;
             const direction= e.deltaY > 0 ? 1 : -1;

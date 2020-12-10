@@ -48,14 +48,8 @@ module.exports = {
             {
                 test: /\.css$/i,
                 use: [
-                    'style-loader',
                     MiniCssExtractPlugin.loader,
-                    {
-                        loader: 'css-loader',
-                        options: {
-                            sourceMap: true
-                        }
-                    },
+                    'css-loader',
                     {
                         loader: 'postcss-loader',
                         options: {
