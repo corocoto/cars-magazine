@@ -1,0 +1,14 @@
+:root{
+    --white: #fff;
+    --green: #70C1B3;
+    --red: #FF1654;
+    --blue: #247BA0;
+    --black: #000000;
+}
+
+:root{
+    --standard-font: 'Cinzel', sans-serif;
+    --header-font: 'Orbitron', sans-serif;
+}
+
+:root{--header-padding:24px;--nav-left:48px;--nav-bottom:48px;--nav-size:16px}*{font-family:var(--standard-font);-webkit-box-sizing:border-box;box-sizing:border-box;margin:0;padding:0}body,html{width:100%;height:100%;overflow:hidden}body{color:var(--white)}header{width:100%;top:0;left:0;padding:var(--header-padding);color:var(--black);font-weight:700;font-family:var(--header-font);z-index:1}.pagination,header{position:fixed}section{position:absolute;top:0;left:0;width:100%;height:100%;background:var(--green);opacity:0;padding:calc(var(--header-padding)*2 + 24px) calc(var(--nav-left) + var(--nav-size)) 0 calc(var(--nav-left)*2 + var(--nav-size));display:-webkit-box;display:-webkit-flex;display:-ms-flexbox;display:flex;-webkit-box-orient:vertical;-webkit-box-direction:normal;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-justify-content:space-around;-ms-flex-pack:distribute;justify-content:space-around}section:nth-child(odd){background:var(--blue)}section:first-of-type{opacity:1}.text-container h2{font-family:var(--header-font);font-size:36px;line-height:1.6;position:relative}.text-container h2 span{margin-right:12px}.text-container{display:block;width:100%;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content}.text-container p{font-size:14px}.text-container p:not(:last-of-type){margin-bottom:12px}.image-container{width:100%;max-width:100%}.image-container img{width:100%;-webkit-box-shadow:0 12px 36px 2px rgba(0,0,0,.75);box-shadow:0 12px 36px 2px rgba(0,0,0,.75)}nav{bottom:var(--nav-bottom);left:var(--nav-left)}nav li{width:var(--nav-size);height:var(--nav-size);list-style-type:none}nav li:not(:last-child){margin-bottom:12px}nav a{cursor:pointer;display:block;width:100%;height:100%;border-radius:50%;background:var(--white)}nav a[active]{background:var(--red)}@media only screen and (min-width:768px){section{-webkit-box-orient:horizontal;-webkit-box-direction:normal;-webkit-flex-direction:row;-ms-flex-direction:row;flex-direction:row;-webkit-box-pack:justify;-webkit-justify-content:space-between;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-webkit-align-items:center;-ms-flex-align:center;align-items:center}.text-container h2{font-size:72px}.text-container p{font-size:16px}.image-container,.text-container{width:45%}}@media only screen and (min-width:1440px){.text-container p{font-size:24px}}
