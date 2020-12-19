@@ -3,10 +3,13 @@
 
 :root{
   --header-padding: 24px;
+  --nav-left: 48px;
+  --nav-bottom: 48px;
+  --nav-size: 16px;
 }
 
 *{
-  font-family: var(--standard);
+  font-family: var(--standard-font);
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -29,7 +32,7 @@ header{
   padding: var(--header-padding);
   color: var(--black);
   font-weight: bold;
-  font-family: var(--header);
+  font-family: var(--header-font);
   z-index: 1;
 }
 
@@ -45,10 +48,10 @@ section{
   height: 100%;
   background: var(--green);
   opacity: 0;
-  padding: 0 calc(48px * 2 + 16px);
+  padding: calc(var(--header-padding) * 2 + 24px) calc(var(--nav-left) + var(--nav-size)) 0 calc(var(--nav-left) * 2 + var(--nav-size));
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  align-items: center;
 }
 
 section:nth-child(odd){
@@ -60,8 +63,8 @@ section:first-of-type{
 }
 
 .text-container h2{
-  font-family: var(--header);
-  font-size: 72px;
+  font-family: var(--header-font);
+  font-size: 36px;
   line-height: 1.6;
   position: relative;
 }
@@ -72,21 +75,20 @@ section:first-of-type{
 
 .text-container{
   display: block;
-  width: 40%;
+  width: 100%;
   height: fit-content;
 }
 
 .text-container p{
-    font-size: 24px;
-    line-height: 1.6;
+    font-size: 14px;
 }
 
 .text-container p:not(:last-of-type){
-  margin-bottom: 24px;
+  margin-bottom: 12px;
 }
 
 .image-container{
-    width: 40%;
+    width: 100%;
     max-width: 100%;
 }
 
@@ -95,16 +97,14 @@ section:first-of-type{
     box-shadow: 0 12px 36px 2px rgba(0,0,0,0.75);
 }
 
-
 nav{
-  bottom: 48px;
-  left: 48px;
+  bottom: var(--nav-bottom);
+  left: var(--nav-left);
 }
 
 nav li{
-  width: 16px;
-  height: 16px;
-  
+  width: var(--nav-size);
+  height: var(--nav-size);
   list-style-type: none;
 }
 
@@ -123,4 +123,31 @@ nav a{
 
 nav a[active]{
   background: var(--red);
+}
+
+@media only screen and (min-width : 768px) {
+  section{
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .text-container h2{
+    font-size: 72px;
+  }  
+
+  .text-container p{
+    font-size: 16px;
+  }
+
+  .text-container,
+  .image-container{
+    width: 45%;
+  }
+}
+
+@media only screen and (min-width : 1440px) {
+  .text-container p{
+    font-size: 24px;
+  }
 }
