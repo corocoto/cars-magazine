@@ -55,7 +55,7 @@ section:nth-child(odd){
   background: var(--blue);
 }
 
-section.is_active{
+section:first-of-type{
   opacity: 1;
 }
 
@@ -121,6 +121,6 @@ nav a{
   background: var(--white);
 }
 
-nav a.is_active{
+nav a[active]{
   background: var(--red);
 }

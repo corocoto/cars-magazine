@@ -71,8 +71,8 @@ module.exports = {
         new copyWebpackPlugin({
             patterns: [
                 {
-                    from: `${paths.src}/assets/img/`,
-                    to: `${paths.dist}/assets/img/`
+                    from: `${paths.src}/assets/`,
+                    to: `${paths.dist}/assets/`
                 }
             ]
         }),

@@ -1,5 +1,5 @@
 import PubSub from 'pubsub-js';
-import {TimelineLite} from "gsap";
+import {TimelineLite} from 'gsap';
 
 PubSub.subscribe('goToSlide', (msg,data) => {
     const sections = document.querySelectorAll('section');
