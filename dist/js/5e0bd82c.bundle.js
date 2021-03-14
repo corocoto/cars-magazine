@@ -1,1 +1,0 @@
-(self.webpackChunkcars_magazine=self.webpackChunkcars_magazine||[]).push([[179],{4126:function(e,n,u){"use strict";s(u(2133));var a=s(u(693));function s(e){return e&&e.__esModule?e:{default:e}}u(3715),u(7609),new a.default},7609:function(e,n,u){"use strict";u.r(n)}},0,[[4126,497,54]]]);
